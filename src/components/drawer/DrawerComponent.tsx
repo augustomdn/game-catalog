@@ -42,13 +42,24 @@ export default function DrawerComponent({ className }: DrawerTriggerProps) {
 
     return (
         <Drawer direction="right" open={open} onOpenChange={setOpen}>
+
             <DrawerTrigger className={`${className}`} >
-                    <Menu />
+                <Menu />
             </DrawerTrigger>
+
             <DrawerContent className="p-4 flex flex-col justify-between items-center">
-                <DrawerHeader className="p-0">
-                    <DrawerTitle className="font-honk font-normal text-xl">JOGOPÉDIA</DrawerTitle>
+                <DrawerHeader className="w-full p-0">
+                    <DrawerTitle hidden={true} />
+
+                    <DrawerClose className="flex justify-end mt-1">
+                        <X />
+                    </DrawerClose>
+
                 </DrawerHeader>
+
+                <DrawerDescription hidden={true} />
+
+
                 <nav className="flex flex-col items-center gap-4">
                     {navItems.map((item) => (
                         <Link href={item.href} key={item.label}>
@@ -61,10 +72,8 @@ export default function DrawerComponent({ className }: DrawerTriggerProps) {
                 </nav>
 
                 <DarkModeComponent />
-                <DrawerFooter className="p-0 m-0">
-                    <DrawerClose>
-                        <X />
-                    </DrawerClose>
+
+                <DrawerFooter hidden={true}>
                 </DrawerFooter>
             </DrawerContent>
         </Drawer>
