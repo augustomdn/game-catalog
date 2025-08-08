@@ -15,7 +15,7 @@ export default function HeaderComponent() {
 
             {/* Logo */}
             <a href="">
-                <span className="font-honk text-2xl uppercase md:text-2xl">
+                <span className="font-honk text-2xl uppercase">
                     JOGOPÉDIA
                 </span>
             </a>
@@ -25,7 +25,7 @@ export default function HeaderComponent() {
 
                 {navItems.map((item, index) => (
                     <Link href={item.href} key={index}>
-                        <span className="text-xl text-primary-txt">{item.label}</span>
+                        <span className="">{item.label}</span>
                     </Link>
                 ))}
             </nav>
@@ -36,8 +36,8 @@ export default function HeaderComponent() {
             {/* Dark Mode Button */}
             <div className="hidden lg:flex lg:gap-4">
                 <Button asChild>
-                    <Link href="/login">
-                        <span>Login</span>
+                    <Link href="/registro">
+                        <span>Cadastre-se</span>
                     </Link>
                 </Button>
                 <DarkModeComponent className="" />
