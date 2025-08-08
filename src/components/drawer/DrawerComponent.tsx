@@ -67,7 +67,9 @@ export default function DrawerComponent({ className }: DrawerTriggerProps) {
                         </Link>
                     ))}
                     <Button>
-                        <span>Login</span>
+                        <Link href="/login">
+                            <span>Login</span>
+                        </Link>
                     </Button>
                 </nav>
 

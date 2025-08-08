@@ -11,7 +11,7 @@ const navItems = [
 
 export default function HeaderComponent() {
     return (
-        <header className="p-4 flex justify-between items-center">
+        <header className="p-4 flex justify-between items-center border border-solid">
 
             {/* Logo */}
             <a href="">
@@ -35,7 +35,11 @@ export default function HeaderComponent() {
 
             {/* Dark Mode Button */}
             <div className="hidden lg:flex lg:gap-4">
-                <Button><span>Login</span></Button>
+                <Button asChild>
+                    <Link href="/login">
+                        <span>Login</span>
+                    </Link>
+                </Button>
                 <DarkModeComponent className="" />
             </div>
 
