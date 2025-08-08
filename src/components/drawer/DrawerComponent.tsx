@@ -47,7 +47,7 @@ export default function DrawerComponent({ className }: DrawerTriggerProps) {
                 <Menu />
             </DrawerTrigger>
 
-            <DrawerContent className="p-4 flex flex-col justify-between items-center">
+            <DrawerContent className="p-4 flex flex-col justify-between items-center dark:bg-card">
                 <DrawerHeader className="w-full p-0">
                     <DrawerTitle hidden={true} />
 

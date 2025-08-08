@@ -11,7 +11,7 @@ const navItems = [
 
 export default function HeaderComponent() {
     return (
-        <header className="p-4 flex justify-between items-center border border-solid">
+        <header className="p-4 flex justify-between items-center border border-solid dark:bg-card">
 
             {/* Logo */}
             <a href="">
