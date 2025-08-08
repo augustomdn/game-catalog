@@ -5,6 +5,7 @@ import { Input } from "../ui/input";
 import { useForm } from "react-hook-form";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { supabase } from "@/lib/supabaseClient";
 
 type FormData = {
     firstName: string;
@@ -27,8 +28,53 @@ export default function SignUpForm() {
         formState: { errors }
     } = useForm<FormData>();
 
-    const onSubmit = (data: FormData) => {
-        console.log(data);
+    const onSubmit = async (data: FormData) => {
+        const { firstName, lastName, email, password } = data;
+
+        const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+                data: {
+                    first_name: firstName,
+                    last_name: lastName,
+                }
+            }
+        });
+
+        if (signUpError) {
+
+            if (signUpError.message.includes("already registered")) {
+                alert("Este email já está cadastrado. Por favor, faça login ou recupere sua senha.");
+            } else {
+                alert("Erro ao cadastrar: " + signUpError.message);
+            }
+
+            return;
+        }
+
+        const userId = signUpData.user?.id;
+
+        if (!userId) {
+            alert("Usuário criado, mas não foi possível obter o ID.");
+            return;
+        }
+
+        const { error: profileError } = await supabase.from("profiles").insert({
+            id: userId,
+            first_name: firstName,
+            last_name: lastName
+        });
+
+        if (profileError) {
+            
+            alert("Cadastro realizado, mas houve erro ao salvar o perfil: " + profileError.message);
+            return;
+        }
+
+        alert("Cadastro realizado! Verifique seu email para confirmar.");
+
+
     };
 
     return (
