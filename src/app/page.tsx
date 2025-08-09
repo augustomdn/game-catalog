@@ -1,13 +1,21 @@
 "use client"
 
+import MainComponent from "@/components/main/MainComponent";
 import "./globals.css";
 import HeaderComponent from "@/components/header/HeaderComponent";
+import RoundedSeparatorComponent from "@/components/rounded-separator/RoundedSeparatorComponent";
+import TrendingComponent from "@/components/trending/TrendingComponent";
+import InfosComponent from "@/components/infos/InfosComponent";
 
 export default function Home() {
 
   return (
     <>
-      <HeaderComponent/>
+      <HeaderComponent />
+      <MainComponent />
+      <RoundedSeparatorComponent />
+      <TrendingComponent />
+      <InfosComponent />
     </>
   );
 }

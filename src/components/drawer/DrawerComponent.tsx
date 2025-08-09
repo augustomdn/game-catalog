@@ -66,6 +66,11 @@ export default function DrawerComponent({ className }: DrawerTriggerProps) {
                             <span className="text-xl">{item.label}</span>
                         </Link>
                     ))}
+                    <Button asChild variant={"secondary"}>
+                        <Link href="/login">
+                            <span>Entrar</span>
+                        </Link>
+                    </Button>
                     <Button>
                         <Link href="/registro">
                             <span>Cadastre-se</span>
