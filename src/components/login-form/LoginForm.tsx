@@ -65,8 +65,8 @@ export default function LoginForm() {
 
                         {item.id === "password" && (
                             <div className="text-right">
-                                <Link href="/recuperar-senha" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-                                    <span>Esqueceu a senha?</span>
+                                <Link href="/recuperar-senha" className="ml-auto inline-block text-sm underline-offset-4">
+                                    <span className="underline">Esqueceu a senha?</span>
                                 </Link>
                             </div>
                         )}
@@ -82,6 +82,9 @@ export default function LoginForm() {
                 <Button variant="outline" className="w-full">
                     Login com Google
                 </Button>
+                <div className="">
+                    <span className="text-muted-foreground">Primeira vez?</span> <Link href={"/registro"}><span className="text-white font-bold hover:underline">Cadastre-se aqui</span></Link>
+                </div>
             </div>
         </form>
     );

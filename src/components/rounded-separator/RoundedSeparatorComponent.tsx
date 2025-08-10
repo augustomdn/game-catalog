@@ -1,11 +1,11 @@
 export default function RoundedSeparatorComponent() {
     return (
         <div className="w-full h-10 dark:radial-gradient(50%_500%_at_50%_-420%,rgba(64,97,231,0.4)_80%,rgba(0,0,0,0.1)_100%),black] bg-[radial-gradient(50%_500%_at_50%_-420%,rgba(64,97,231,0.2)_60%,rgba(255,255,255,0.05)_100%),white" style={{
-            background: `radial-gradient(
-                    50% 500% at 50% -420%,
-                    rgba(64, 97, 231, 0.4) 80%,
-                    rgba(0, 0, 0, 0.1) 100%
-                ),black`
+            // background: `radial-gradient(
+            //         50% 500% at 50% -420%,
+            //         rgba(64, 97, 231, 0.4) 80%,
+            //         rgba(0, 0, 0, 0.1) 100%
+            //     ),black`
         }}>
             <div
                 className="absolute w-full h-1 border-t rounded-tl-[70%] rounded-tr-[70%]"

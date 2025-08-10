@@ -1,10 +1,22 @@
+import Footer from "@/components/footer/Footer";
 import { LoginCard } from "@/components/login/LoginCard";
+import Link from "next/link";
 
 export default function LoginPage() {
     return (
         <>
-            <main className="min-h-screen p-4 flex flex-col items-center justify-center">
+            <main className="w-full min-h-screen flex flex-col justify-between">
+                <div className="p-4 lg:px-40">
+                    <Link href="/">
+                        <span className="font-honk text-4xl uppercase">JOGOPÉDIA</span>
+                    </Link>
+                </div>
+                <div className="p-4 flex justify-center">
                     <LoginCard />
+                </div>
+                <div className="mt-10 border-t border-solid bg-card">
+                    <Footer />
+                </div>
             </main>
         </>
     )
