@@ -13,7 +13,7 @@ export default function MainComponent() {
                 </h1>
                 <p className="text-center">Tudo 100% gratuito.</p>
                 <p className="text-center">Efetue seu cadastro e mergulhe no mundo dos jogos da melhor forma.</p>
-                <Image src={"/assets/images/FF7.png"} alt={"Final Fantasy 7 Image"} width={300} height={300} className="border-b border-solid"></Image>
+                {/* <Image src={"/assets/images/FF7.png"} alt={"Final Fantasy 7 Image"} width={300} height={300} className="border-b border-solid"></Image> */}
                 <Button asChild>
                     <Link href="/registro">Cadastre-se</Link>
                 </Button>

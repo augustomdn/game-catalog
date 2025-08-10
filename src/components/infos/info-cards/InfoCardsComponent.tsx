@@ -51,7 +51,7 @@ export default function InfoCardsComponent() {
                     </CardHeader>
 
                     <CardContent className="flex-1 flex flex-col justify-between p-0">
-                        <span className="text-base text-muted-foreground">
+                        <span className="text-muted-foreground">
                             {item.description}
                         </span>
 
