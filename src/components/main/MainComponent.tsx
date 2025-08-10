@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function MainComponent() {
     return (
-        <main className="p-8 min-h-[31vh] flex flex-col items-center justify-center">
+        <main className="p-8 min-h-[31vh] flex flex-col items-center justify-center gap-4 lg:px-40">
             <div className="flex flex-col items-center justify-center gap-4">
                 <h1 className="text-3xl text-center font-bold">
                     Tudo sobre jogos, consoles e muito mais, sem limites

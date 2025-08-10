@@ -70,7 +70,7 @@ export default function HeaderComponent() {
                     </>
                 ) : (
                     <>
-                        <Button asChild variant="secondary">
+                        <Button asChild>
                             <Link href="/login">Entrar</Link>
                         </Button>
                     </>
