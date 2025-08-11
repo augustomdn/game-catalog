@@ -39,7 +39,6 @@ export default function SignUpForm() {
                     first_name: firstName,
                     last_name: lastName,
                 },
-                emailRedirectTo: 'https://jogopedia.vercel.app/login'
             }
         });
 
@@ -68,7 +67,6 @@ export default function SignUpForm() {
         });
 
         if (profileError) {
-            
             alert("Cadastro realizado, mas houve erro ao salvar o perfil: " + profileError.message);
             return;
         }

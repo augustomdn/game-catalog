@@ -35,7 +35,13 @@ export default function LoginForm() {
             password,
         });
 
+
         if (error) {
+            if (error.message === 'Invalid login credentials') {
+                alert('Email ou senha incorretos.');
+                return;
+            }
+
             alert("Erro ao fazer login: " + error.message);
             return;
         }
