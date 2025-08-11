@@ -83,7 +83,7 @@ export default function LoginForm() {
                     Login com Google
                 </Button>
                 <div className="">
-                    <span className="text-muted-foreground">Primeira vez?</span> <Link href={"/registro"}><span className="text-white font-bold hover:underline">Cadastre-se aqui</span></Link>
+                    <span className="text-muted-foreground">Primeira vez?</span> <Link href={"/registro"}><span className="font-bold hover:underline">Cadastre-se aqui</span></Link>
                 </div>
             </div>
         </form>
