@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <HeaderComponent />
       <MainComponent />
-      <RoundedSeparatorComponent />
+      {/* <RoundedSeparatorComponent /> */}
       <TrendingComponent />
       <InfosComponent />
       <Footer />
