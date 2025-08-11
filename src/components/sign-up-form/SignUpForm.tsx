@@ -25,6 +25,7 @@ export default function SignUpForm() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors }
     } = useForm<FormData>();
 
@@ -39,8 +40,10 @@ export default function SignUpForm() {
                     first_name: firstName,
                     last_name: lastName,
                 },
+                emailRedirectTo: 'https://jogopedia.vercel.app/login'
             }
-        });
+        }
+        );
 
         if (signUpError) {
 
@@ -68,10 +71,12 @@ export default function SignUpForm() {
 
         if (profileError) {
             alert("Cadastro realizado, mas houve erro ao salvar o perfil: " + profileError.message);
+            reset();
             return;
         }
 
         alert("Cadastro realizado! Verifique seu email para confirmar.");
+        reset();
 
 
     };
