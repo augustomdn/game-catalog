@@ -12,8 +12,8 @@ const footerOptions = [
 
 export default function Footer() {
     return (
-        <footer className="p-8 bg-card border-t">
-            <div className="py-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:px-40">
+        <footer className="p-8 bg-card border-t lg:px-40">
+            <div className="py-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
                 {footerOptions.map((item, index) => (
                     <Link href="/" key={index}>
                         <span className="text-muted-foreground underline">
