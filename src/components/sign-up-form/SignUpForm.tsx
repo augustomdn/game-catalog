@@ -38,7 +38,8 @@ export default function SignUpForm() {
                 data: {
                     first_name: firstName,
                     last_name: lastName,
-                }
+                },
+                emailRedirectTo: 'https://jogopedia.vercel.app/login'
             }
         });
 
