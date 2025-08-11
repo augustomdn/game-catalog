@@ -14,9 +14,8 @@ export function SignUpCard() {
     return (
         <Card className="w-full max-w-sm">
             <CardHeader className="">
-                <CardTitle className="my-5 flex flex-col items-center justify-center gap-4">
-                    <h1 className="font-honk uppercase text-3xl">Jogopédia</h1>
-                    <h2>Cadastre-se</h2>
+                <CardTitle className="flex">
+                    <h1 className="text-3xl font-bold">Cadastre-se</h1>
                 </CardTitle>
                 <CardDescription hidden={true}>
                     Digite seu email abaixo para efetuar o login

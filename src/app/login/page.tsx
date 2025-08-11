@@ -6,7 +6,7 @@ export default function LoginPage() {
     return (
         <>
             <main className="w-full min-h-screen flex flex-col justify-between">
-                <div className="p-4 lg:px-40">
+                <div className="px-8 py-4 lg:px-40">
                     <Link href="/">
                         <span className="font-honk text-4xl uppercase">JOGOPÉDIA</span>
                     </Link>
