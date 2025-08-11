@@ -12,8 +12,8 @@ const footerOptions = [
 
 export default function Footer() {
     return (
-        <footer className="m-8">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:px-40">
+        <footer className="p-8 bg-card border-t">
+            <div className="py-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:px-40">
                 {footerOptions.map((item, index) => (
                     <Link href="/" key={index}>
                         <span className="text-muted-foreground underline">
@@ -22,8 +22,8 @@ export default function Footer() {
                     </Link>
                 ))}
             </div>
-            <div className="mt-8 border-t">
-                <p className="p-4 text-muted-foreground text-center">
+            <div className="pt-8">
+                <p className="text-muted-foreground text-center">
                     © Augusto Nascimento
                 </p>
             </div>
