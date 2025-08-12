@@ -1,21 +1,11 @@
-"use client"
-
-import MainComponent from "@/components/main/MainComponent";
+import LandingComponent from "@/components/landing/LandingComponent";
 import "./globals.css";
-import HeaderComponent from "@/components/header/HeaderComponent";
-import TrendingComponent from "@/components/trending/TrendingComponent";
-import InfosComponent from "@/components/infos/InfosComponent";
-import Footer from "@/components/footer/Footer";
 
-export default function Home() {
 
+export default async function Home() {
   return (
     <>
-      <HeaderComponent />
-      <MainComponent />
-      <TrendingComponent />
-      <InfosComponent />
-      <Footer />
+      <LandingComponent />
     </>
   );
 }
