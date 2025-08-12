@@ -1,5 +1,3 @@
-"use client"
-
 import Footer from "../footer/Footer";
 import HeaderComponent from "../header/HeaderComponent";
 import InfosComponent from "../infos/InfosComponent";

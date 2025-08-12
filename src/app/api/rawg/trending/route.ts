@@ -1,8 +1,9 @@
 export async function GET() {
+  const games = 'https://api.rawg.io/api/games'
   const apiKey = process.env.RAWG_API_KEY;
 
   const response = await fetch(
-    `https://api.rawg.io/api/games?key=${apiKey}&ordering=-rating&page_size=12`
+    `${games}?key=${apiKey}&ordering=-added&page_size=10`
   );
 
   if (!response.ok) {
