@@ -1,61 +1,77 @@
-"use client"
+"use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Image from "next/image";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
 type Game = {
-    id: number,
-    name: string,
-    background_image: string,
-    rating: number,
-}
+  id: number;
+  name: string;
+  background_image: string;
+  rating: number;
+};
 
 export default function TrendingCarouselComponent() {
-    const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState<Game[]>([]);
 
-    useEffect(() => {
-    console.log('fetchGames disparado');
+  useEffect(() => {
     async function fetchGames() {
-        const res = await fetch('/api/rawg/trending')
+      const res = await fetch("/api/rawg/trending");
 
-        if (!res.ok) {
-            console.error('Error fetching games: ', res.status,)
-        }
+      if (!res.ok) {
+        console.error("Error fetching games: ", res.status);
+        return;
+      }
 
-        const data = await res.json();
-        setGames(data.results);
+      const data = await res.json();
+      setGames(data.results);
     }
 
     fetchGames();
-}, []);
+  }, []);
 
-    return (
-        <div className="mx-8">
-            <Carousel
-                opts={{
-                    align: "start",
-                }}
-                className=""
+  return (
+    <div className="mx-8">
+      <Carousel
+        opts={{
+          align: "start",
+        }}
+        className=""
+      >
+        <CarouselContent>
+          {games.map((game, index) => (
+            <CarouselItem
+              key={game.id}
+              className="basis-2/2 md:basis-1/3 lg:basis-1/5"
             >
-                <CarouselContent>
-                    {games.map((game, index) => (
-                        <CarouselItem key={index} className="basis-2/2 md:basis-1/3 lg:basis-1/5">
-                            <div className="">
-                                <Card>
-                                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                                        <span className="text-3xl font-semibold">{index + 1}</span>
-                                        <img src={game.background_image} alt="" className="w-[200px] h-[200px]" />
-                                    </CardContent>
-                                </Card>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-            </Carousel>
-        </div>
-
-    )
+              <div className="flex flex-col gap-4">
+                <Card className="relative h-[45vh] overflow-hidden">
+                  <Image
+                    src={game.background_image}
+                    alt={game.name}
+                    fill
+                    style={{ objectFit: "cover" }}
+                    sizes="(max-width: 768px) 100vw, 45vw"
+                    priority={index < 3} // Prioriza as primeiras imagens para carregamento mais rápido
+                  />
+                </Card>
+                <CardContent className="flex flex-col p-0">
+                  <h2>{game.name}</h2>
+                </CardContent>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
+  );
 }
