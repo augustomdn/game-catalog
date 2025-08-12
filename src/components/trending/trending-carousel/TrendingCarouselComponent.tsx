@@ -18,21 +18,22 @@ export default function TrendingCarouselComponent() {
   useEffect(() => {
     fetch('/api/rawg/trending')
       .then(res => res.json())
-      .then(data => setGames(data))
+      .then(data => setGames(Array.isArray(data) ? data : []))
+      .catch(() => setGames([]))
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <p>Carregando jogos...</p>;
+  if (games.length === 0) return <p className="text-center">Nenhum jogo encontrado.</p>;
 
   return (
     <div className="mx-8">
       <Carousel opts={{ align: "start" }}>
         <CarouselContent>
-          {games.map((game, index) => (
+          {games.map((game) => (
             <CarouselItem key={game.id} className="basis-2/2 md:basis-1/3 lg:basis-1/5">
               <Card>
                 <CardContent className="flex flex-col items-center justify-center p-4">
-                  {/* <span className="text-3xl font-semibold mb-2">{index + 1}</span> */}
                   <img
                     src={game.background_image}
                     alt={game.name}
