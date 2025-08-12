@@ -157,3 +157,9 @@
   }
 
 }
+
+@media (orientation: landscape) and (max-width: 768px) {
+  .carousel-item-landscape {
+    flex-basis: 50% !important; /* ex: ocupar metade da largura no landscape mobile */
+  }
+}
