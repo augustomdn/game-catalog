@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 import SkeletonComponent from "@/components/skeleton/SkeletonComponent";
+import { Star } from "lucide-react";
 
 type Game = {
     id: number;
@@ -55,9 +56,11 @@ export default function TrendingCarouselComponent() {
                         ? Array(5).fill(0).map((_, i) => (
                             <CarouselItem
                                 key={i}
-                                className="basis-2/2 carousel-item-landscape md:basis-1/3 lg:basis-1/5"
+                                className="flex flex-col gap-2 basis-2/2 carousel-item-landscape md:basis-1/3 lg:basis-1/5"
                             >
                                 <SkeletonComponent className="h-[45vh]" />
+                                <SkeletonComponent className="h-4 w-[200px]" />
+                                <SkeletonComponent className="h-4 w-[80px]" />
                             </CarouselItem>
                         ))
                         : games.map((game, index) => (
@@ -77,7 +80,8 @@ export default function TrendingCarouselComponent() {
                                         />
                                     </Card>
                                     <CardContent className="flex flex-col p-0">
-                                        <h2>{game.name}</h2>
+                                        <h2 className="font-semibold">{game.name}</h2>
+                                        <p className="flex gap-2 text-muted-foreground items-center">{game.rating}  <Star className="text-muted-foreground" size={"1rem"} /></p>
                                     </CardContent>
                                 </div>
                             </CarouselItem>
