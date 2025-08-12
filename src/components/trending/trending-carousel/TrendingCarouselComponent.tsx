@@ -57,7 +57,7 @@ export default function TrendingCarouselComponent() {
                                 key={i}
                                 className="basis-2/2 carousel-item-landscape md:basis-1/3 lg:basis-1/5"
                             >
-                                <SkeletonComponent className="h-[45vh] rounded-none" />
+                                <SkeletonComponent className="h-[45vh]" />
                             </CarouselItem>
                         ))
                         : games.map((game, index) => (
@@ -66,13 +66,13 @@ export default function TrendingCarouselComponent() {
                                 className="basis-2/2 carousel-item-landscape md:basis-1/3 lg:basis-1/5"
                             >
                                 <div className="flex flex-col gap-4">
-                                    <Card className="relative h-[45vh] overflow-hidden rounded-none">
+                                    <Card className="relative h-[45vh] overflow-hidden">
                                         <Image
                                             src={game.background_image}
                                             alt={game.name}
                                             fill
                                             style={{ objectFit: "cover" }}
-                                            sizes="(max-width: 768px) 100vw, 45vw"
+                                            sizes="(max-width: 768px) 90vw, 45vw"
                                             priority={index < 3}
                                         />
                                     </Card>
