@@ -13,11 +13,11 @@ export default function useSupabaseUser() {
 
 
             if (user) {
-                const firstName = user.user_metadata.first_name;
-                const lastName = user.user_metadata.last_name;
+                const firstName = user.user_metadata?.first_name || "";
+                const lastName = user.user_metadata?.last_name || "";
 
                 const name_abbr =
-                    (firstName[0] || "") + (lastName[0] || "");
+                    (firstName[0] || "") + (lastName[0] || "") || "S/N";
 
                 setUser({
                     name_abbr: name_abbr.toUpperCase(),
