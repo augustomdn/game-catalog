@@ -1,16 +1,21 @@
 "use client";
 
-import { Avatar, AvatarFallback } from "../ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
-export default function AvatarComponent() {
+interface AvatarProps {
+    name_abbr?: string;
+    src?: string;
+    alt?: string;
+    className?: string;
+}
+
+export default function AvatarComponent({name_abbr, src, alt, className}: AvatarProps) {
 
     return (
-        <div className="flex items-center gap-2">
-            <Avatar>
-                {/* <AvatarImage src="https://github.com/shadcn.png" alt="Avatar" /> */}
-                <AvatarFallback>AN</AvatarFallback>
-            </Avatar>
-            
-        </div>
+        <Avatar>
+            <AvatarImage src={src} alt={alt} />
+            <AvatarFallback className={className}>{name_abbr}</AvatarFallback>
+        </Avatar>
+
     );
 }
