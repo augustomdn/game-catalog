@@ -1,12 +1,12 @@
 "use client"
 
 import { Label } from "@/components/ui/label";
-import { Input } from "../ui/input";
 import { useForm } from "react-hook-form";
-import { Button } from "../ui/button";
 import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 type LoginFormInputs = {
     email: string;
