@@ -1,8 +1,22 @@
+"use client"
+
 import Footer from "@/components/footer/Footer";
+import FullScreenLoadingComponent from "@/components/full-screen-loading/FullScreenLoadingComponent";
 import { SignUpCard } from "@/components/sign-up/SignUpCard";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function SignInPage() {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(false);
+    });
+
+    if (loading) {
+        return <FullScreenLoadingComponent />;
+    }
+
     return (
         <>
             <main className="min-h-screen flex flex-col">

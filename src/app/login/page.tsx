@@ -1,8 +1,22 @@
+"use client"
+
 import Footer from "@/components/footer/Footer";
+import FullScreenLoadingComponent from "@/components/full-screen-loading/FullScreenLoadingComponent";
 import { LoginCard } from "@/components/login/LoginCard";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function LoginPage() {
+    const [loading, setLoading] = useState(true);
+    
+        useEffect(() => {
+            setLoading(false);
+        });
+    
+        if (loading) {
+            return <FullScreenLoadingComponent />;
+        }
+
     return (
         <>
             <main className="w-full min-h-screen flex flex-col justify-between">
