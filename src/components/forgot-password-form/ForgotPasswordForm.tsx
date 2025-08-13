@@ -33,22 +33,9 @@ export default function ForgotPasswordForm() {
     const onSubmit = async (data: ForgotPasswordFormInput) => {
         const { email } = data;
 
-        const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: redirectUrl, });
+        await supabase.auth.resetPasswordForEmail(email, { redirectTo: redirectUrl, });
 
-
-        if (error) {
-            if (error.message === 'Invalid login credentials') {
-                alert('Email ou senha incorretos.');
-                return;
-            }
-
-            alert("Erro ao fazer login: " + error.message);
-            return;
-        }
-
-        alert(`Um email foi enviado para ${email} por favor cheque sua caixa de mensagens.`)
-
-
+        alert(`Se este e-mail estiver cadastrado, você receberá um link de redefinição.`)
         router.push("/");
     };
 
