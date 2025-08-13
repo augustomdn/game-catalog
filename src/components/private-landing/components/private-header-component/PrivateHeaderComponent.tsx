@@ -32,6 +32,7 @@ export default function PrivateHeaderComponent() {
                     name_abbr={user.name_abbr}
                     src={user.avatar_url}
                     alt="Avatar do usuário"
+                    className="bg-fuchsia-400 bg-[linear-gradient(90deg,rgba(42,123,155,1)_0%,rgba(87,199,133,1)_50%,rgba(237,221,83,1)_100%)]"
                 />
                 <Button variant="secondary" onClick={handleLogout}>
                     Sair
