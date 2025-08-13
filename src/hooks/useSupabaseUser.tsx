@@ -5,18 +5,22 @@ import { useEffect, useState } from "react";
 export default function useSupabaseUser() {
     const [user, setUser] = useState<{ name_abbr: string, avatar_url: string } | null>(null);
 
+
     useEffect(() => {
+
         const fetchUser = async () => {
             const { data: { user } } = await supabase.auth.getUser();
 
+
             if (user) {
-                const name_abbr = user.user_metadata.first_name ? user.user_metadata.first_name.split("").map((n: string) => n[0])
-                    .join("")
-                    .toUpperCase()
-                    : "US";
+                const firstName = user.user_metadata.first_name;
+                const lastName = user.user_metadata.last_name;
+
+                const name_abbr =
+                    (firstName[0] || "") + (lastName[0] || "");
 
                 setUser({
-                    name_abbr,
+                    name_abbr: name_abbr.toUpperCase(),
                     avatar_url: user.user_metadata?.avatar_url || ""
                 });
             }
@@ -28,7 +32,7 @@ export default function useSupabaseUser() {
             if (!session) setUser(null);
             else fetchUser();
         });
-        
+
         return () => subscription.subscription.unsubscribe();
 
     }, []);
