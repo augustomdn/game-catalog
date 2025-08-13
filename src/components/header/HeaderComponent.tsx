@@ -6,6 +6,7 @@ import { supabase } from "@/lib/supabaseClient";
 import DrawerComponent from "../drawer/DrawerComponent";
 import { Button } from "../ui/button";
 import DarkModeComponent from "../dark-mode/DarkModeComponent";
+import { useRouter } from "next/navigation";
 
 const navItems = [
     { label: "Home", href: "/" },
@@ -15,6 +16,7 @@ const navItems = [
 
 export default function HeaderComponent() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const router = useRouter();
 
     // Verifica se o usuário está logado
     useEffect(() => {
@@ -41,7 +43,7 @@ export default function HeaderComponent() {
             alert("Erro ao sair: " + error.message);
         } else {
             setIsLoggedIn(false);
-            window.location.href = "/login";
+            router.push("/");
         }
     };
 
