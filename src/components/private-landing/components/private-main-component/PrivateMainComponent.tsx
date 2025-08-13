@@ -1,3 +1,5 @@
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+
 export default function PrivateMainComponent() {
     return (
         <>
@@ -12,82 +14,141 @@ export default function PrivateMainComponent() {
                 {/* Barra de pesquisa em seguida */}
 
                 {/* Card com jogos */}
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 justify-center">
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    <div className="bg-amber-400 h-[50vh] lg:h-[42vh]">
-                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
-                            IMAGEM
-                        </div>
-                        <div className="w-full bg-red-400 h-1/4 flex justify-center items-center">
-                            DESCRIÇÃO
-                        </div>
-                    </div>
-                    
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 justify-center">
+                    <Card className="w-full h-full flex flex-col justify-between min-h-[380px] py-0 overflow-hidden">
+                        <CardHeader className="p-0" hidden>
+                            <CardTitle />
+                        </CardHeader>
+
+                        <CardContent className=" flex-1 flex flex-col justify-between p-0">
+                            <div className="w-full h-[75%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    IMAGEM
+                                </span>
+                            </div>
+
+                            <div className="h-[25%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    DESCRIÇÃO
+                                </span>
+                            </div>
+                        </CardContent>
+                        <CardFooter hidden />
+                    </Card>
+                    <Card className="w-full h-full flex flex-col justify-between min-h-[380px] py-0 overflow-hidden">
+                        <CardHeader className="p-0" hidden>
+                            <CardTitle />
+                        </CardHeader>
+
+                        <CardContent className=" flex-1 flex flex-col justify-between p-0">
+                            <div className="w-full h-[75%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    IMAGEM
+                                </span>
+                            </div>
+
+                            <div className="h-[25%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    DESCRIÇÃO
+                                </span>
+                            </div>
+                        </CardContent>
+                        <CardFooter hidden />
+                    </Card>
+                    <Card className="w-full h-full flex flex-col justify-between min-h-[380px] py-0 overflow-hidden">
+                        <CardHeader className="p-0" hidden>
+                            <CardTitle />
+                        </CardHeader>
+
+                        <CardContent className=" flex-1 flex flex-col justify-between p-0">
+                            <div className="w-full h-[75%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    IMAGEM
+                                </span>
+                            </div>
+
+                            <div className="h-[25%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    DESCRIÇÃO
+                                </span>
+                            </div>
+                        </CardContent>
+                        <CardFooter hidden />
+                    </Card>
+                    <Card className="w-full h-full flex flex-col justify-between min-h-[380px] py-0 overflow-hidden">
+                        <CardHeader className="p-0" hidden>
+                            <CardTitle />
+                        </CardHeader>
+
+                        <CardContent className=" flex-1 flex flex-col justify-between p-0">
+                            <div className="w-full h-[75%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    IMAGEM
+                                </span>
+                            </div>
+
+                            <div className="h-[25%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    DESCRIÇÃO
+                                </span>
+                            </div>
+                        </CardContent>
+                        <CardFooter hidden />
+                    </Card>
+                    <Card className="w-full h-full flex flex-col justify-between min-h-[380px] py-0 overflow-hidden">
+                        <CardHeader className="p-0" hidden>
+                            <CardTitle />
+                        </CardHeader>
+
+                        <CardContent className=" flex-1 flex flex-col justify-between p-0">
+                            <div className="w-full h-[75%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    IMAGEM
+                                </span>
+                            </div>
+
+                            <div className="h-[25%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    DESCRIÇÃO
+                                </span>
+                            </div>
+                        </CardContent>
+                        <CardFooter hidden />
+                    </Card>
+                    <Card className="w-full h-full flex flex-col justify-between min-h-[380px] py-0 overflow-hidden">
+                        <CardHeader className="p-0" hidden>
+                            <CardTitle />
+                        </CardHeader>
+
+                        <CardContent className=" flex-1 flex flex-col justify-between p-0">
+                            <div className="w-full h-[75%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    IMAGEM
+                                </span>
+                            </div>
+
+                            <div className="h-[25%] bg-gradient-to-r from-blue-500 via-green-500 via-yellow-400 to-red-500">
+                                <span className="text-xl">
+                                    DESCRIÇÃO
+                                </span>
+                            </div>
+                        </CardContent>
+                        <CardFooter hidden />
+                    </Card>
                 </div>
             </main>
         </>
     )
 }
+
+
+
+
+{/* <div className="h-[50vh] lg:h-[42vh] rounded-2xl overflow-hidden">
+                        <div className="w-full bg-red-300 h-3/4 flex justify-center items-center">
+                            IMAGEM
+                        </div>
+                        <div className="w-full bg-fuchsia-400 bg-[linear-gradient(90deg,rgba(42,123,155,1)_0%,rgba(87,199,133,1)_50%,rgba(237,221,83,1)_100%)] h-1/4 flex justify-center items-center">
+                            DESCRIÇÃO
+                        </div>
+                    </div> */}
