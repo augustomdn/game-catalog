@@ -4,7 +4,6 @@ export default function PrivateLandingComponent() {
     return (
         <>
             <HeaderComponent />
-
         </>
     )
 }
