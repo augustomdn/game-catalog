@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
-// bg-[url(/assets/images/main-wallpaper.webp)] bg-fill bg-no-repeat
-
 export default function MainComponent() {
     return (
         <main className="p-8 min-h-[60vh] flex flex-col items-center justify-center gap-4 lg:px-40">

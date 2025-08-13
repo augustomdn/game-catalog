@@ -8,32 +8,32 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
 
-type LoginFormInputs = {
+type ForgotPasswordFormInput = {
     email: string;
-    password: string;
 };
 
 const formItems = [
     { label: 'Email', htmlFor: 'email', type: 'email', id: 'email', placeholder: 'seuemail@exemplo.com' },
-    { label: 'Senha', htmlFor: 'password', type: 'password', id: 'password', placeholder: 'Digite sua senha' },
 ];
 
-export default function LoginForm() {
+export default function ForgotPasswordForm() {
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting }
-    } = useForm<LoginFormInputs>();
+    } = useForm<ForgotPasswordFormInput>();
+
+    const redirectUrl =
+        process.env.NODE_ENV === "production"
+            ? "https://jogopedia.vercel.app/redefinir-senha"
+            : "http://localhost:3000/redefinir-senha";
 
     const router = useRouter();
 
-    const onSubmit = async (data: LoginFormInputs) => {
-        const { email, password } = data;
+    const onSubmit = async (data: ForgotPasswordFormInput) => {
+        const { email } = data;
 
-        const { error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
+        const { error } = await supabase.auth.resetPasswordForEmail(email, { redirectTo: redirectUrl, });
 
 
         if (error) {
@@ -45,6 +45,9 @@ export default function LoginForm() {
             alert("Erro ao fazer login: " + error.message);
             return;
         }
+
+        alert(`Um email foi enviado para ${email} por favor cheque sua caixa de mensagens.`)
+
 
         router.push("/");
     };
@@ -59,23 +62,16 @@ export default function LoginForm() {
                             type={item.type}
                             id={item.id}
                             placeholder={item.placeholder}
-                            {...register(item.id as keyof LoginFormInputs, {
+                            {...register(item.id as keyof ForgotPasswordFormInput, {
                                 required: `${item.label} é obrigatório`,
                             })}
                         />
-                        {errors[item.id as keyof LoginFormInputs] && (
+                        {errors[item.id as keyof ForgotPasswordFormInput] && (
                             <p className="text-red-500 text-sm">
-                                {errors[item.id as keyof LoginFormInputs]?.message}
+                                {errors[item.id as keyof ForgotPasswordFormInput]?.message}
                             </p>
                         )}
 
-                        {item.id === "password" && (
-                            <div className="text-right">
-                                <Link href="/esqueci-senha" className="ml-auto inline-block text-sm underline-offset-4">
-                                    <span className="underline">Esqueceu a senha?</span>
-                                </Link>
-                            </div>
-                        )}
                     </div>
 
 
@@ -83,14 +79,9 @@ export default function LoginForm() {
             </div>
             <div className="my-4 flex flex-col gap-4">
                 <Button type="submit" disabled={isSubmitting} className="w-full">
-                    Entrar
+                    Redefinir
                 </Button>
-                <Button variant="outline" className="w-full">
-                    Login com Google
-                </Button>
-                <div className="">
-                    <span className="text-muted-foreground">Primeira vez?</span> <Link href={"/registro"}><span className="font-bold hover:underline">Cadastre-se aqui</span></Link>
-                </div>
+
             </div>
         </form>
     );

@@ -103,7 +103,7 @@ export default function SignUpForm() {
 
                         {item.id === "password" && (
                             <div className="text-right">
-                                <Link href="/recuperar-senha" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
+                                <Link href="/esqueci-senha" className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
                                     <span>Esqueceu a senha?</span>
                                 </Link>
                             </div>
