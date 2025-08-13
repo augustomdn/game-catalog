@@ -8,7 +8,8 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import UpdatePasswordForm from "../update-password-form/UpdatePasswordForm"
+import UpdatePasswordForm from "./form/update-password-form/UpdatePasswordForm"
+
 
 export function UpdatePasswordCard() {
     return (

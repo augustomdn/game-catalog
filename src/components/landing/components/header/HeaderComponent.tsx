@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
-import DrawerComponent from "../drawer/DrawerComponent";
-import { Button } from "../ui/button";
-import DarkModeComponent from "../dark-mode/DarkModeComponent";
+import DrawerComponent from "../../../drawer/DrawerComponent";
+import { Button } from "../../../ui/button";
+import DarkModeComponent from "../../../dark-mode/DarkModeComponent";
 import { useRouter } from "next/navigation";
 
 const navItems = [

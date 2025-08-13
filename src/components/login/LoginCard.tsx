@@ -8,7 +8,8 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import LoginForm from "../login-form/LoginForm"
+import LoginForm from "./form/login-form/LoginForm"
+
 
 export function LoginCard() {
     return (

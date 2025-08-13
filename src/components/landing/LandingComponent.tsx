@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import Footer from "../footer/Footer";
-import HeaderComponent from "../header/HeaderComponent";
-import InfosComponent from "../infos/InfosComponent";
-import MainComponent from "../main/MainComponent";
-import TrendingComponent from "../trending/TrendingComponent";
+import HeaderComponent from "./components/header/HeaderComponent";
+import InfosComponent from "./components/infos/InfosComponent";
+
+import TrendingComponent from "./components/trending/TrendingComponent";
 import FullScreenLoadingComponent from "../full-screen-loading/FullScreenLoadingComponent";
+import MainComponent from "./components/main/MainComponent";
 
 export default function LandingComponent() {
     const [loading, setLoading] = useState(true);

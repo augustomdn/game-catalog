@@ -6,7 +6,8 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import ForgotPasswordForm from "../forgot-password-form/ForgotPasswordForm"
+import ForgotPasswordForm from "./form/forgot-password-form/ForgotPasswordForm"
+
 
 export function ForgotPasswordCard() {
     return (
