@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 export default function useSupabaseUser() {
     const [user, setUser] = useState<{ name_abbr: string, avatar_url: string } | null>(null);
 
-
     useEffect(() => {
 
         const fetchUser = async () => {
