@@ -17,7 +17,7 @@
   --text-primary: #fff;
   --text-secondary: #000; */
 
-  
+
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -151,6 +151,7 @@
     @apply border-border outline-ring/50;
 
   }
+
   body {
     @apply bg-background text-foreground;
 
@@ -160,28 +161,47 @@
 
 @layer utilities {
   .bg-google-gradient {
-    background-image: linear-gradient(
-      to right,
-      #4285f4,
-      #34a853,
-      #fbbc05,
-      #ea4335
-    );
+    background-image: linear-gradient(to right,
+        #4285f4,
+        #34a853,
+        #fbbc05,
+        #ea4335);
   }
 
   .dark .bg-google-gradient {
-    background-image: linear-gradient(
-      to right,
-      #1e3a8a,
-      #166534,
-      #854d0e,
-      #7f1d1d
-    );
+    background-image: linear-gradient(to right,
+        #1e3a8a,
+        #166534,
+        #854d0e,
+        #7f1d1d);
+  }
+
+  .bottom-shadow {
+    position: relative;
+  }
+
+  .bottom-shadow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10rem;
+    /* 24 Tailwind = 6rem */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+    pointer-events: none;
+    transition: background 0.3s ease;
+  }
+
+  /* Modo dark */
+  .dark .bottom-shadow::after {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   }
 }
 
 @media (orientation: landscape) and (max-width: 768px) {
   .carousel-item-landscape {
-    flex-basis: 50% !important; /* ex: ocupar metade da largura no landscape mobile */
+    flex-basis: 50% !important;
+    /* ex: ocupar metade da largura no landscape mobile */
   }
 }

@@ -48,7 +48,7 @@ export default function HeaderComponent() {
     };
 
     return (
-        <header className="px-8 py-4 w-full flex justify-between items-center lg:px-40">
+        <header className="absolute top-0 px-8 py-4 w-full flex justify-between items-center lg:px-40">
             <Link href="/">
                 <span className="font-honk text-4xl uppercase">JOGOPÉDIA</span>
             </Link>
