@@ -48,4 +48,6 @@
 - [ShadcnUI](https://ui.shadcn.com/)
 - [TailwindCSS](https://tailwindcss.com/)
 
+### 📄 Licença
+- [Licença](https://choosealicense.com/licenses/mit/)
 
